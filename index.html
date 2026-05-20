@@ -173,7 +173,7 @@
     }
     .link-btn:hover { color: #b8117a; }
 
-    .divider { border: none; border-top: 1px solid #f0f0f0; margin: 28px 0 20px; }
+.divider { border: none; border-top: 1px solid #f0f0f0; margin: 28px 0 20px; }
   </style>
 </head>
 <body>
@@ -211,7 +211,7 @@
     <div id="survey">
       <div class="badge">Employee Survey</div>
       <h1>We're exploring the idea of hosting monthly onsite lunch pop-ups at PacBio, featuring rotating local restaurants and food vendors.</h1>
-      <p class="sub">Would you be interested in purchasing lunch with à la carte options and specials priced between <strong>$13–$16</strong>?</p>
+      <p class="sub">Would you be interested in purchasing lunch with &agrave; la carte options and specials priced between <strong>$13&ndash;$16</strong>?</p>
       <div class="btn-row">
         <button class="btn btn-yes" onclick="vote('yes')">Yes</button>
         <button class="btn btn-no"  onclick="vote('no')">No</button>
@@ -220,11 +220,11 @@
       <button class="link-btn" onclick="showResults()">View results</button>
     </div>
 
-    <!-- Thank you -->
+    <!-- Thank you / Already voted -->
     <div id="thankyou" class="thankyou">
       <div class="icon" id="ty-icon">&#x2705;</div>
       <h2 id="ty-msg">Thanks for your response!</h2>
-      <p>Your answer has been recorded.</p>
+      <p id="ty-sub">Your answer has been recorded.</p>
       <hr class="divider" />
       <button class="link-btn" onclick="showResults()">See results so far</button>
     </div>
@@ -246,7 +246,7 @@
       </div>
 
       <p class="total" id="total-label">0 total responses</p>
-      <button class="link-btn" onclick="showSurvey()">&#x2190; Back to survey</button>
+      <button class="link-btn" onclick="showSurvey()">&#x2190; Back</button>
     </div>
 
   </div>
@@ -260,7 +260,22 @@
     'Content-Type': 'application/json',
   };
 
+  function showAlreadyVoted(choice) {
+    document.getElementById('survey').style.display   = 'none';
+    document.getElementById('thankyou').style.display = 'block';
+    document.getElementById('ty-icon').textContent = choice === 'yes' ? '✅' : '👍';
+    document.getElementById('ty-msg').textContent  = 'You\'ve already voted!';
+    document.getElementById('ty-sub').textContent  = 'Your response has already been recorded. Thanks!';
+  }
+
   async function vote(choice) {
+    // Block if already voted in this browser
+    if (localStorage.getItem('pacbio_voted')) {
+      showAlreadyVoted(localStorage.getItem('pacbio_voted'));
+      return;
+    }
+
+    // Disable buttons to prevent double-clicking
     document.querySelectorAll('.btn').forEach(b => b.disabled = true);
 
     try {
@@ -276,6 +291,9 @@
       return;
     }
 
+    // Remember vote in this browser so they can't vote again
+    localStorage.setItem('pacbio_voted', choice);
+
     document.getElementById('survey').style.display = 'none';
     document.getElementById('thankyou').style.display = 'block';
     if (choice === 'yes') {
@@ -285,6 +303,7 @@
       document.getElementById('ty-icon').textContent = '👍';
       document.getElementById('ty-msg').textContent  = 'Got it — thanks for letting us know!';
     }
+    document.getElementById('ty-sub').textContent = 'Your answer has been recorded.';
   }
 
   async function showResults() {
@@ -319,9 +338,22 @@
   function showSurvey() {
     document.getElementById('results').style.display  = 'none';
     document.getElementById('thankyou').style.display = 'none';
-    document.getElementById('survey').style.display   = 'block';
-    document.querySelectorAll('.btn').forEach(b => b.disabled = false);
+    // If already voted, show the already-voted screen instead of re-enabling the form
+    const prior = localStorage.getItem('pacbio_voted');
+    if (prior) {
+      showAlreadyVoted(prior);
+    } else {
+      document.getElementById('survey').style.display = 'block';
+      document.querySelectorAll('.btn').forEach(b => b.disabled = false);
+    }
   }
+
+  // On page load: if already voted, skip straight to the thank-you screen
+  (function init() {
+    const prior = localStorage.getItem('pacbio_voted');
+    if (prior) showAlreadyVoted(prior);
+  })();
+
 </script>
 </body>
 </html>
