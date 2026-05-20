@@ -173,22 +173,6 @@
     }
     .link-btn:hover { color: #b8117a; }
 
-    .reset-btn {
-      margin-top: 10px;
-      background: #f3f3f3;
-      border: none;
-      color: #555;
-      font-size: 11px;
-      font-weight: 700;
-      padding: 8px 20px;
-      border-radius: 100px;
-      cursor: pointer;
-      font-family: 'Roboto', sans-serif;
-      text-transform: uppercase;
-      letter-spacing: .08em;
-    }
-    .reset-btn:hover { background: #e5e5e5; }
-
     .divider { border: none; border-top: 1px solid #f0f0f0; margin: 28px 0 20px; }
   </style>
 </head>
@@ -262,8 +246,6 @@
       </div>
 
       <p class="total" id="total-label">0 total responses</p>
-      <button class="reset-btn" onclick="resetAll()">Reset all votes</button>
-      <br/>
       <button class="link-btn" onclick="showSurvey()">&#x2190; Back to survey</button>
     </div>
 
@@ -339,15 +321,6 @@
     document.getElementById('thankyou').style.display = 'none';
     document.getElementById('survey').style.display   = 'block';
     document.querySelectorAll('.btn').forEach(b => b.disabled = false);
-  }
-
-  function resetAll() {
-    if (confirm('This will delete ALL votes from the database. Are you sure?')) {
-      fetch(SUPABASE_URL + '/rest/v1/votes?id=gte.0', {
-        method: 'DELETE',
-        headers: HEADERS
-      }).then(() => showResults());
-    }
   }
 </script>
 </body>
