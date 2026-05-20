@@ -23,23 +23,9 @@
       margin-bottom: 24px;
       text-align: center;
     }
-    .logo-wordmark {
-      font-size: 26px;
-      font-weight: 700;
-      color: #d9178d;
-      letter-spacing: -0.3px;
-      line-height: 1;
-    }
-    .logo-dot {
-      display: inline-block;
-      width: 11px;
-      height: 11px;
-      background: #d9178d;
-      border-radius: 50%;
-      margin-left: 1px;
-      vertical-align: middle;
-      position: relative;
-      top: -2px;
+    .pacbio-logo svg {
+      height: 36px;
+      width: auto;
     }
 
     .card {
@@ -122,6 +108,7 @@
     }
     .btn-no:hover:not(:disabled) { background: #fdf0f8; }
 
+    /* Thank you */
     .thankyou { display: none; }
     .thankyou .icon { font-size: 50px; margin-bottom: 16px; }
     .thankyou h2 {
@@ -130,6 +117,7 @@
     }
     .thankyou p { font-size: 15px; color: #666; font-weight: 300; }
 
+    /* Results */
     .results { display: none; }
     .results h2 {
       font-size: 16px; font-weight: 700; color: #212529;
@@ -207,11 +195,35 @@
 <body>
 
   <div class="pacbio-logo">
-    <span class="logo-wordmark">PacBio<span class="logo-dot"></span></span>
+    <svg id="logo" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="160" height="35.003" viewBox="0 0 160 35.003">
+      <defs>
+        <clipPath id="clip-path">
+          <path id="Clip_2" data-name="Clip 2" d="M0,0H26.3V33.111H0Z" fill="none"/>
+        </clipPath>
+        <clipPath id="clip-path-2">
+          <path id="Clip_11" data-name="Clip 11" d="M0,35H160V0H0Z" fill="none"/>
+        </clipPath>
+      </defs>
+      <g id="Group_3" data-name="Group 3" transform="translate(0 1.182)">
+        <path id="Clip_2-2" data-name="Clip 2" d="M0,0H26.3V33.111H0Z" fill="none"/>
+        <g id="Group_3-2" data-name="Group 3" clip-path="url(#clip-path)">
+          <path id="Fill_1" data-name="Fill 1" d="M6.339,33.111H0V0H14.853a11.855,11.855,0,0,1,8.171,3.075A10.318,10.318,0,0,1,26.3,10.69c0,6.121-4.921,10.737-11.447,10.737H6.339V33.11Zm0-27.246v9.7h8.514a4.743,4.743,0,0,0,4.825-4.873,4.719,4.719,0,0,0-4.825-4.825Z" transform="translate(0)" fill="#af0678"/>
+        </g>
+      </g>
+      <path id="Fill_4" data-name="Fill 4" d="M11.967,26.015C5.145,26.015,0,20.423,0,13.008S5.145,0,11.967,0a11.5,11.5,0,0,1,7.474,2.7V.709h5.865v24.6H19.441V23.32A11.5,11.5,0,0,1,11.967,26.015Zm.757-20.1A6.8,6.8,0,0,0,6.1,13.008a6.8,6.8,0,0,0,6.622,7.1,6.384,6.384,0,0,0,4.712-2.04,7.345,7.345,0,0,0,1.91-5.055,7.343,7.343,0,0,0-1.91-5.055A6.385,6.385,0,0,0,12.724,5.913Z" transform="translate(27.858 8.987)" fill="#af0678"/>
+      <path id="Fill_6" data-name="Fill 6" d="M0,13.008A12.71,12.71,0,0,1,13.008,0,12.739,12.739,0,0,1,25.164,8.135L19.252,9.886a6.694,6.694,0,0,0-6.244-3.973,6.9,6.9,0,0,0-6.906,7.1,6.9,6.9,0,0,0,6.906,7.1,6.694,6.694,0,0,0,6.244-3.973l5.912,1.75a12.739,12.739,0,0,1-12.156,8.135A12.71,12.71,0,0,1,0,13.008" transform="translate(57.277 8.987)" fill="#af0678"/>
+      <path id="Fill_8" data-name="Fill 8" d="M16.981,33.111H0V0H16.035a10.949,10.949,0,0,1,7.308,2.584,8.514,8.514,0,0,1,2.909,6.45,8.342,8.342,0,0,1-3.217,6.67,9.148,9.148,0,0,1,4.635,7.947A8.9,8.9,0,0,1,24.6,30.4,11.442,11.442,0,0,1,16.981,33.111ZM6.339,19.015v8.231H16.981a4.031,4.031,0,0,0,2.9-1.189,4.26,4.26,0,0,0,0-5.853,4.031,4.031,0,0,0-2.9-1.188Zm0-13.15V13.2h9.7a3.621,3.621,0,0,0,2.6-1.047,3.713,3.713,0,0,0,1.041-2.643,3.562,3.562,0,0,0-3.642-3.642Z" transform="translate(86.317 1.182)" fill="#e31b92"/>
+      <path id="Clip_11-2" data-name="Clip 11" d="M0,35H160V0H0Z" fill="none"/>
+      <g id="Mask_Group_1" data-name="Mask Group 1" clip-path="url(#clip-path-2)">
+        <path id="Fill_10" data-name="Fill 10" d="M6.717,34.293H.8V9.7H6.717v24.6ZM3.737,7.52A3.678,3.678,0,0,1,0,3.737,3.655,3.655,0,0,1,3.737,0,3.678,3.678,0,0,1,7.521,3.737,3.785,3.785,0,0,1,6.445,6.444,3.787,3.787,0,0,1,3.737,7.52Z" transform="translate(117.532)" fill="#e31b92"/>
+        <path id="Fill_12" data-name="Fill 12" d="M31.293,15.647A15.647,15.647,0,1,1,15.647,0,15.646,15.646,0,0,1,31.293,15.647" transform="translate(128.707 3.71)" fill="#e31b92"/>
+      </g>
+    </svg>
   </div>
 
   <div class="card">
 
+    <!-- Survey -->
     <div id="survey">
       <div class="badge">Employee Survey</div>
       <h1>We're exploring the idea of hosting monthly onsite lunch pop-ups at PacBio, featuring rotating local restaurants and food vendors.</h1>
@@ -224,14 +236,16 @@
       <button class="link-btn" onclick="showResults()">View results</button>
     </div>
 
+    <!-- Thank you -->
     <div id="thankyou" class="thankyou">
-      <div class="icon" id="ty-icon">✅</div>
+      <div class="icon" id="ty-icon">&#x2705;</div>
       <h2 id="ty-msg">Thanks for your response!</h2>
       <p>Your answer has been recorded.</p>
       <hr class="divider" />
       <button class="link-btn" onclick="showResults()">See results so far</button>
     </div>
 
+    <!-- Results -->
     <div id="results" class="results">
       <h2>Survey Results</h2>
 
@@ -250,11 +264,10 @@
       <p class="total" id="total-label">0 total responses</p>
       <button class="reset-btn" onclick="resetAll()">Reset all votes</button>
       <br/>
-      <button class="link-btn" onclick="showSurvey()">← Back to survey</button>
+      <button class="link-btn" onclick="showSurvey()">&#x2190; Back to survey</button>
     </div>
 
   </div>
-
 <script>
   const SUPABASE_URL = 'https://drmrhafxohrsbqgprebp.supabase.co';
   const SUPABASE_KEY = 'sb_publishable_vcI633gC3fg9ABZKtRPduA_IPw2TLKw';
@@ -267,18 +280,20 @@
 
   async function vote(choice) {
     document.querySelectorAll('.btn').forEach(b => b.disabled = true);
+
     try {
       const res = await fetch(SUPABASE_URL + '/rest/v1/votes', {
         method: 'POST',
         headers: { ...HEADERS, 'Prefer': 'return=minimal' },
         body: JSON.stringify({ choice })
       });
-      if (!res.ok) throw new Error();
+      if (!res.ok) throw new Error('Failed to record vote');
     } catch (e) {
       document.querySelectorAll('.btn').forEach(b => b.disabled = false);
       alert('Something went wrong — please try again.');
       return;
     }
+
     document.getElementById('survey').style.display = 'none';
     document.getElementById('thankyou').style.display = 'block';
     if (choice === 'yes') {
@@ -295,20 +310,25 @@
     document.getElementById('thankyou').style.display = 'none';
     document.getElementById('results').style.display  = 'block';
     document.getElementById('total-label').textContent = 'Loading…';
+
     try {
-      const rows = await (await fetch(SUPABASE_URL + '/rest/v1/votes?select=choice', { headers: HEADERS })).json();
-      const yes = rows.filter(r => r.choice === 'yes').length;
-      const no  = rows.filter(r => r.choice === 'no').length;
+      const res = await fetch(SUPABASE_URL + '/rest/v1/votes?select=choice', { headers: HEADERS });
+      const rows = await res.json();
+
+      const yes   = rows.filter(r => r.choice === 'yes').length;
+      const no    = rows.filter(r => r.choice === 'no').length;
       const total = yes + no;
       const yesPct = total ? Math.round(yes / total * 100) : 0;
       const noPct  = total ? Math.round(no  / total * 100) : 0;
+
       document.getElementById('count-yes').textContent = yes;
       document.getElementById('count-no').textContent  = no;
       document.getElementById('pct-yes').textContent   = total ? '(' + yesPct + '%)' : '';
       document.getElementById('pct-no').textContent    = total ? '(' + noPct  + '%)' : '';
       document.getElementById('bar-yes').style.width   = yesPct + '%';
       document.getElementById('bar-no').style.width    = noPct  + '%';
-      document.getElementById('total-label').textContent = total + ' total response' + (total !== 1 ? 's' : '');
+      document.getElementById('total-label').textContent =
+        total + ' total response' + (total !== 1 ? 's' : '');
     } catch (e) {
       document.getElementById('total-label').textContent = 'Could not load results.';
     }
@@ -323,8 +343,10 @@
 
   function resetAll() {
     if (confirm('This will delete ALL votes from the database. Are you sure?')) {
-      fetch(SUPABASE_URL + '/rest/v1/votes?id=gte.0', { method: 'DELETE', headers: HEADERS })
-        .then(() => showResults());
+      fetch(SUPABASE_URL + '/rest/v1/votes?id=gte.0', {
+        method: 'DELETE',
+        headers: HEADERS
+      }).then(() => showResults());
     }
   }
 </script>
